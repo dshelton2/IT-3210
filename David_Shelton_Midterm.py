@@ -3,7 +3,7 @@ from subprocess import call
 from threading import Timer
 
 # David Shelton - Intro to Scripting
-
+# You will need the argv words.txt to properly run this script
 score = 0
 run = True
 speed = 1.0
