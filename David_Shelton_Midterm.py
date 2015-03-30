@@ -4,7 +4,7 @@ from threading import Timer
 
 # David Shelton - Intro to Scripting
 
-score = 60
+score = 0
 run = True
 speed = 1.0
 y = 1
