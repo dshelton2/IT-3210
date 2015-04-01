@@ -5,19 +5,18 @@ and the instances of TCP and UDP protocols.
 It is only able to do so because the initial list of dicts was 
 successfully created.
 '''
-#records = []
+
 dictlist = []
 with open('netlog.csv', 'r') as f:
 	csvObj = csv.reader(f)
 	header = next(csvObj)
-	#records.append(header)
+	
 	'''
 	-- read each record into a dictionary, then create a list with these dictionaries
 	'''	
 	for row in csvObj:
 		dictlist.append(dict(zip(header, row)))
-		#records.append(row)
-
+		
 '''
 -- place all of the source and destination addresses in separate lists and identify
 any addresses that occur in both lists --
