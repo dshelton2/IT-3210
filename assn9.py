@@ -1,5 +1,10 @@
 import csv
-
+'''
+This script will simply output the recurring IPs between two fields
+and the instances of TCP and UDP protocols.
+It is only able to do so because the initial list of dicts was 
+successfully created.
+'''
 #records = []
 dictlist = []
 with open('netlog.csv', 'r') as f:
