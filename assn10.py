@@ -22,10 +22,8 @@ data in each column.
 import csv
 import itertools
 from itertools import islice
-#from sys import argv
 import string
 
-#infile = argv[1]
 textfile = open('proprietary_data.txt', 'r')
 
 headers = ['Serial', 'Make', 'Model', 'User']
