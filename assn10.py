@@ -22,10 +22,10 @@ data in each column.
 import csv
 import itertools
 from itertools import islice
-from sys import argv
+#from sys import argv
 import string
 
-infile = argv[1]
+#infile = argv[1]
 textfile = open('proprietary_data.txt', 'r')
 
 headers = ['Serial', 'Make', 'Model', 'User']
@@ -42,10 +42,10 @@ def groupIt(it, size):
     it = iter(it)
     return iter(lambda: tuple(islice(it, size)), ())
 	
-with open(infile, 'w') as csvfile:
+with open('prop_data.csv', 'w') as csvfile:
 	writer = csv.writer(csvfile)
 	writer.writerow(headers)
 	writer.writerows(groupIt(lines, 4))
-print lines
-	
-raw_input()
+
+textfile.close()
+
