@@ -24,12 +24,11 @@ import itertools
 from itertools import islice
 from sys import argv
 import string
-#import prop_data.csv
 
 infile = argv[1]
 textfile = open('proprietary_data.txt', 'r')
 
-headers = ['Serial', 'Make', 'Model', 'First', 'Last']
+headers = ['Serial', 'Make', 'Model', 'User']
 lines = []
 
 for line in textfile:
@@ -39,19 +38,14 @@ for line in textfile:
 	line = line.strip(' ')
 	lines.append(line)
 
-def chunk(it, size):
+def groupIt(it, size):
     it = iter(it)
     return iter(lambda: tuple(islice(it, size)), ())
-
-grouped = itertools.izip([lines]*5)
-
-
 	
 with open(infile, 'w') as csvfile:
 	writer = csv.writer(csvfile)
 	writer.writerow(headers)
-	writer.writerows(chunk(lines, 4))
+	writer.writerows(groupIt(lines, 4))
 print lines
-
 	
 raw_input()
